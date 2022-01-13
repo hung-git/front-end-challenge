@@ -1,39 +1,54 @@
 import React, { useState, useEffect } from 'react'
 import { fetchImageList } from '../config/api'
 import "./MyStyles.css"
+import ImageDetails from './ImageDetails'
 
 const ImageIndex = () => {
   const [images, setImages] = useState([]);
+  const [x, setX] = useState([])
+  const [y, setY] = useState([])
 
   useEffect(() => {
       fetchImageList
       .then((data) => {
       
-        console.log(data)
-        
-      setImages(data);
+      
+      // const half = Math.ceil(data.length / 2);    
+
+      // const firstHalf = data.slice(0, half)
+      // const secondHalf = data.slice(-half)
+      //   // console.log(data)
+      
+      // setX(firstHalf);
+      // setY(secondHalf)
+      setImages(data)
     });
 
   }, []);
 
   return (
     <>
-    {images.map((e, index) => {
+    {/* <div className="column-container">
+    {x.map((e, index) => {
       return (
-        <div key={index} className="container">
-          <img src={e.url} alt={e.title}/>
-          <div className="container-content">
-          <h4>{e.title}</h4>
-          <br/>
-          <p>{e.date}</p>
-          <br/>
-          <p>{e.explanation}</p>
-          <br/>
-          <button className="like-btn">Like</button>
-          </div>
-        </div>
+          <ImageDetails data={e} key={index} />
       )
     })}
+    {y.map((e, index) => {
+      return (
+          <ImageDetails data={e} key={index} />
+      )
+    })}
+    </div> */}
+    
+      {images.map((e, index) => {
+        return (
+          <div className="container">
+            <ImageDetails data={e} key={index} />
+          </div>
+        )
+      })}
+    
     </>
   )
 }
