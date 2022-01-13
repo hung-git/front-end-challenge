@@ -1,24 +1,40 @@
 import React, { useState, useEffect } from 'react'
+import { fetchImageList } from '../config/api'
+import "./MyStyles.css"
 
 const ImageIndex = () => {
-  const [image, setImage] = useState([]);
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.nasa.gov/planetary/apod?api_key=l4PZsOew3qNeZFai95z5tLNVK7wUhmZgQfzgh5dj&count=10")
-      .then((res) => res.json())
+      fetchImageList
       .then((data) => {
       
         console.log(data)
         
-      setImage(data);
+      setImages(data);
     });
 
   }, []);
 
   return (
-    <div>
-      list of images here
-    </div>
+    <>
+    {images.map((e, index) => {
+      return (
+        <div key={index} className="container">
+          <img src={e.url} alt={e.title}/>
+          <div className="content">
+          <h4>{e.title}</h4>
+          <br/>
+          <p>{e.date}</p>
+          <br/>
+          <p>{e.explanation}</p>
+          <br/>
+          <button>Like</button>
+          </div>
+        </div>
+      )
+    })}
+    </>
   )
 }
 
