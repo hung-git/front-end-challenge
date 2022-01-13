@@ -22,14 +22,14 @@ const ImageIndex = () => {
       return (
         <div key={index} className="container">
           <img src={e.url} alt={e.title}/>
-          <div className="content">
+          <div className="container-content">
           <h4>{e.title}</h4>
           <br/>
           <p>{e.date}</p>
           <br/>
           <p>{e.explanation}</p>
           <br/>
-          <button>Like</button>
+          <button className="like-btn">Like</button>
           </div>
         </div>
       )
