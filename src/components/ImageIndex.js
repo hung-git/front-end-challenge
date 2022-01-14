@@ -5,8 +5,10 @@ import ImageDetails from './ImageDetails'
 
 const ImageIndex = () => {
   const [images, setImages] = useState([]);
-  const [x, setX] = useState([])
-  const [y, setY] = useState([])
+
+  
+  // const [x, setX] = useState([])
+  // const [y, setY] = useState([])
 
   useEffect(() => {
       fetchImageList
@@ -43,8 +45,8 @@ const ImageIndex = () => {
     
       {images.map((e, index) => {
         return (
-          <div className="container">
-            <ImageDetails data={e} key={index} />
+          <div className="container" key={index}>
+            <ImageDetails data={e} index={index} />
           </div>
         )
       })}

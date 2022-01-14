@@ -33,7 +33,7 @@ body {
 
 .container {
   position: relative;
-  max-width: 50%;
+  max-width: 40%;
   background-color: #f3f3f3;
   border: thin gray solid;
   border-radius: 5px;
