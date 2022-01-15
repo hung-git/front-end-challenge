@@ -1,0 +1,141 @@
+:root {
+  --muted-color: rgba(212, 211, 211);
+  --darker-color: rgba(187, 187, 187);
+  --liked-color: rgb(237,73,86);
+  --background-color: #f3f3f3;
+  --image-background: rgb(29, 29, 29);
+  --border-color: rgb(184, 184, 184);
+}
+
+body {
+  background-color: var(--muted-color);
+  position: relative;
+}
+
+.header {
+  min-height: 80px;
+  background-color: var(--background-color);
+  padding: 25px;
+  margin-bottom: 2em;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  border-bottom: thin var(--border-color) solid;
+}
+
+.header-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+  max-width: 40%;
+  background-color: var(--background-color);
+  border: thin var(--border-color) solid;
+  border-radius: 5px;
+  padding: 0px;
+  margin: 0 auto 25px;
+  top: 150px;
+  bottom: 1rem;
+  font-size: .75rem;
+}
+
+@media only screen and (max-width: 883px) {
+  .container {
+    max-width: 70%;
+    background-color: var(--background-color);
+    border: thin var(--border-color) solid;
+    border-radius: 5px;
+    padding: 0px;
+    margin: 0 auto 25px;
+  }
+
+  .full-image {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.modal {
+  position: relative;
+  top: 100px;
+  margin: 25px;
+  padding: 25px;
+  background-color: var(--image-background);
+  border: thin var(--border-color) solid
+}
+
+.card-content {
+  padding: 25px;
+}
+
+.btn {
+  padding: 5px 10px;
+}
+
+.image-container{
+  background-color: var(--image-background);
+}
+
+.small-image {
+  max-width: 100%;
+  max-height: 400px;
+  display: block;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.full-image {
+  max-width: 80%;
+  max-height: calc(100vh - 80px);
+  display: block;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.icon {
+  max-width: 20px;
+}
+
+.liked {
+  color: var(--liked-color);
+}
+
+.title {
+  display: flex;
+  font-size: 1.15rem;
+  justify-content: space-between;
+}
+
+.tag-line {
+  font-size: .9rem;
+}
+
+.progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh + 80px)
+}
+
+.about-container {
+  position: relative;
+  top: 150px;
+  text-align: center;
+}
+
+.resume {
+  max-width: 80%;
+}
