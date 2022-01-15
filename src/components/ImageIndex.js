@@ -12,18 +12,17 @@ const ImageIndex = () => {
       setLoading(true)
       fetchImageList
       .then((data) => {
-      
+       console.log(data)
       setImages(data)
       setLoading(false)
     });
-
   }, []);
 
   return (
     <>
       {loading ? 
         <div className="progress">
-          <CircularProgress size="10rem" thickness={2} />
+          <CircularProgress size="10rem" thickness={1.25} />
         </div>
         :
         <>
