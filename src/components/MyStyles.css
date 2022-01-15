@@ -36,7 +36,7 @@ body {
 
 .container {
   position: relative;
-  max-width: 40%;
+  max-width: 50%;
   background-color: var(--background-color);
   border: thin var(--border-color) solid;
   border-radius: 5px;
@@ -47,9 +47,46 @@ body {
   font-size: .75rem;
 }
 
-@media only screen and (max-width: 883px) {
+@media only screen and (max-width: 1113px) {
+  .container {
+    max-width: 60%;
+    background-color: var(--background-color);
+    border: thin var(--border-color) solid;
+    border-radius: 5px;
+    padding: 0px;
+    margin: 0 auto 25px;
+  }
+
+  .full-image {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (max-width: 813px) {
   .container {
     max-width: 70%;
+    background-color: var(--background-color);
+    border: thin var(--border-color) solid;
+    border-radius: 5px;
+    padding: 0px;
+    margin: 0 auto 25px;
+  }
+
+  .full-image {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media only screen and (max-width: 513px) {
+  .container {
+    max-width: 100%;
     background-color: var(--background-color);
     border: thin var(--border-color) solid;
     border-radius: 5px;
